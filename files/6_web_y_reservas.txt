@@ -1,0 +1,29 @@
+LA KASTA GRILL & WINE - BOGOTÁ
+SECCIÓN 6: PÁGINAS WEB Y SISTEMA DE RESERVAS
+==========================================
+
+- No manejan un dominio propio tradicional (tipo lakasta.com).
+  Su "hub" central es un Linktree: linktr.ee/lakasta
+  Contenido del Linktree:
+    · "Quiero Reservar" → lakasta.precompro.com/branch/
+    · "Sede Parkway" → link directo a Waze
+    · "Sede Usaquen" → link directo a Waze
+    · "WhatsApp K106" → wa.link directo a WhatsApp de la sede 106
+- Sistema de reservas: powered by PRECOMPRO.COM, un SaaS colombiano
+  especializado en gestión de reservas para restaurantes.
+    · Precompro arma una página de reservas personalizada por marca
+      (se adapta al diseño/estilo del restaurante)
+    · Flujo típico: Paso 1 - número de personas → Paso 2 - selección
+      de fecha disponible → Paso 3 - selección de hora disponible
+    · Permite reservas pre-pagadas / disponibilidad en tiempo real
+    · Se integra con TripAdvisor, Facebook e Instagram (vía Mozrest)
+      para centralizar reservas de múltiples canales
+    · El sitio bloquea acceso automatizado (robots.txt), por lo que
+      no se pudo inspeccionar el diseño exacto de la página, pero
+      por la naturaleza del producto es un flujo tipo wizard,
+      minimalista, orientado 100% a conversión rápida
+- Menú digital: vía código QR (qr.precompro.com), no manejan un PDF
+  fijo — esto explica por qué en RestaurantGuru aparecen "8 versiones"
+  del menú subidas por distintos usuarios en distintas fechas
+- Perfiles reclamados/verificados en: TripAdvisor (ambas sedes),
+  Google Business, RestaurantGuru, Facebook
