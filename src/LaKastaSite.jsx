@@ -241,68 +241,8 @@ function GrateDivider() {
   return <div className="grate" aria-hidden="true" />;
 }
 
-/* Placeholder del logo — sello ovalado con textura de llama, inspirado
-   en el isotipo real de La Kasta. No es el archivo oficial, es una
-   recreación en SVG para maquetar mientras no haya el vector real. */
-function LaKastaBadge({ width = 180, className }) {
-  const h = Math.round(width * 0.6);
-  return (
-    <svg
-      viewBox="0 0 400 240"
-      width={width}
-      height={h}
-      className={className}
-      role="img"
-      aria-label="La Kasta Grill & Wine"
-    >
-      <defs>
-        <radialGradient id="badgeFlame1" cx="30%" cy="78%" r="80%">
-          <stop offset="0%" stopColor="#ff9a4d" stopOpacity="0.95" />
-          <stop offset="35%" stopColor="#d6451c" stopOpacity="0.65" />
-          <stop offset="70%" stopColor="#1a120a" stopOpacity="1" />
-          <stop offset="100%" stopColor="#0d0906" stopOpacity="1" />
-        </radialGradient>
-        <radialGradient id="badgeFlame2" cx="76%" cy="82%" r="65%">
-          <stop offset="0%" stopColor="#ffb066" stopOpacity="0.85" />
-          <stop offset="45%" stopColor="#b8330f" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="transparent" stopOpacity="0" />
-        </radialGradient>
-        <path id="archPath" d="M 34,158 A 168,140 0 0 1 366,158" fill="none" />
-      </defs>
 
-      <ellipse cx="200" cy="120" rx="196" ry="116" fill="#0d0906" stroke="#f2e9dc" strokeWidth="3" />
-      <ellipse cx="200" cy="122" rx="190" ry="110" fill="url(#badgeFlame1)" />
-      <ellipse cx="200" cy="122" rx="190" ry="110" fill="url(#badgeFlame2)" />
-      <ellipse cx="200" cy="120" rx="190" ry="110" fill="none" stroke="#d6451c" strokeWidth="1.5" opacity="0.55" />
 
-      <text
-        fontFamily="'Rye', serif"
-        fontSize="56"
-        fill="#f2e9dc"
-        stroke="#5c1808"
-        strokeWidth="1.2"
-        letterSpacing="2"
-      >
-        <textPath href="#archPath" startOffset="50%" textAnchor="middle">
-          LA KASTA
-        </textPath>
-      </text>
-
-      <text
-        x="200"
-        y="176"
-        fontFamily="'Big Shoulders Stencil', sans-serif"
-        fontSize="19"
-        fontWeight="700"
-        fill="#e8d9c4"
-        letterSpacing="6"
-        textAnchor="middle"
-      >
-        GRILL &amp; WINE
-      </text>
-    </svg>
-  );
-}
 
 function Ember({ style }) {
   return <span className="ember" style={style} aria-hidden="true" />;
@@ -336,6 +276,12 @@ export default function LaKastaSite() {
     <div className="lk-root">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@500;700;900&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Rye&display=swap');
+
+        body {
+          margin: 0;
+          padding: 0;
+          background-color: #17130f;
+        }
 
         .lk-root {
           --carbon: #17130f;
@@ -729,7 +675,8 @@ export default function LaKastaSite() {
       {/* NAV */}
       <nav className="nav">
         <div className="nav-word">
-          <LaKastaBadge width={62} className="nav-badge" />
+          <Flame size={20} color="var(--brasa)" />
+          <span style={{ fontFamily: "'Rye', serif", letterSpacing: "1px", fontSize: "20px" }}>LA KASTA</span>
         </div>
         <div className="nav-links">
           <a href="#sedes">Sedes</a>
@@ -1035,9 +982,7 @@ export default function LaKastaSite() {
           </div>
         </div>
       </footer>
-      <div className="badge-strip">
-        <LaKastaBadge width={110} className="footer-badge" />
-      </div>
+
       <div className="foot-bottom">
         <span>La Kasta Grill &amp; Wine · Grupo La Kasta M&amp;R · Vive una experiencia alrededor del fuego 🔥</span>
         <span>Google 4,8 · TripAdvisor 4,8 · Travellers' Choice 2025 · RestaurantGuru 97/100</span>
